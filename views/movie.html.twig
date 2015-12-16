@@ -1,0 +1,37 @@
+{% extends "layout.html.twig" %}
+{% set moviesMenu = true %}
+
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block content %}
+<h2 class="text-center">{{ block('title') }}</h2>
+<div class="well">
+    <form class="form-horizontal" role="form">
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Titre:</label>
+            <div class="col-sm-9">
+            <p class="form-control-static"> {{movie.title}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">directeur + annéee</label>
+            <div class="col-sm-9">
+                <p class="form-control-static">{{ movie.directeur }} {{movie.annee}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">...</label>
+            <div class="col-sm-9">
+                <p class="form-control-static">{{ movie.categorie.libelle }}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">desclongue</label>
+            <div class="col-sm-9">
+                <p class="form-control-static">{{ movie.descriptionLongue}}</p>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
